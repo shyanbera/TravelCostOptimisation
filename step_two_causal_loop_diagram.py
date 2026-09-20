@@ -1,34 +1,8 @@
-# Travel Cost & Systems Optimisation Challenge
+import os
+import re
 
-This project is based on synthetic data. It simulates a business with rising travel spend, and I have been tasked with understanding where cost is structural and where it is avoidable. The aim is to suggest interventions to reduce spend without damaging client delivery, collaboration or growth.
-
----
-
-<!-- STEP_1_START -->
-## 1. What are the most important drivers of travel spend?
-
-| Category    | Driver                | Evidence (Synthetic Data)                                  | Operational Mechanism                                                                                 |
-|:------------|:----------------------|:-----------------------------------------------------------|:------------------------------------------------------------------------------------------------------|
-| Demand      | Route Distance        | r = 0.66 correlation with total spend                      | Longer flight routes require structurally higher fuel and base ticketing costs.                       |
-| Demand      | Trip Purpose          | Client meetings £2,108.09 vs Delivery £1,931.15            | Commercial and client-facing trips involve premium hub destinations and inflexible arrival schedules. |
-| Price       | Peak Surge Pricing    | £224.10/night (peak) vs £180.60 (standard)                 | Dynamic hotel inventory algorithms during city-wide event windows impose a 24.1% rate premium.        |
-| Price       | Cabin Class Mix       | Business £3,159.52 vs Economy £897.86 (176 trips)          | Premium cabin selection multiplies baseline airfare by 3.5x across commercial travel.                 |
-| Process     | Approval Friction     | r = -0.10 with booking lead time                           | Multi-day management approval bottlenecks compress the available advance booking window.              |
-| Process     | Late Booking Penalty  | 0-3d: £1,319.20 vs 15-30d: £885.54                         | Booking within 72 hours triggers an average £433.65 yield penalty per flight.                         |
-| Behavioural | Policy Non-Compliance | Non-compliant £2,404.26 vs Compliant £1,915.56 (460 trips) | Booking outside negotiated channels or policy caps adds £488.71 of excess cost per trip.              |
-
-### Key Diagnostic Takeaways
-* **Structural Baseline:** Route distance ($r = 0.66$) and duration ($r = 0.42$) dictate the baseline demand, which are unavoidable unless you are willing to directly affect the business.
-* **Compounding Process Bottlenecks:** Management approval delays compress booking lead windows, forcing travellers into high-cost, short-notice tiers that add an average £433.65 surcharge per ticket.
-* **Controllable Price & Behavioural Leakage:** Premium cabin selections, peak event hotel surges, and policy non-compliance (£488.71 excess cost per non-compliant trip) drive avoidable financial leakage that targeted interventions can capture without a blanket travel freeze.
-<!-- STEP_1_END -->
-
----
-
-<!-- STEP_2_START -->
-## 2. Systems Thinking: Causal Loop Diagram (CLD)
-
-```mermaid
+# 1. Clean, balanced Mermaid Diagram without rigid subgraph collision
+mermaid_diagram = """```mermaid
 flowchart TD
     %% Nodes
     V1["1. Core Travel Demand"]
@@ -73,7 +47,12 @@ flowchart TD
     class V9,V10 expense;
     class V4 delay;
     class V1,V2,V3,V5,V6,V7,V8,V11,V12 standard;
-```
+```"""
+
+# 2. Documentation using clean unicode arrows (no string escape bugs)
+step_2_block = f"""## 2. Systems Thinking: Causal Loop Diagram (CLD)
+
+{mermaid_diagram}
 
 ### System Architecture: 12 Variables, Loops & Mechanisms
 
@@ -108,5 +87,25 @@ flowchart TD
   * **System Insight:** Rising cost pressure naturally pushes teams toward digital alternatives for routine internal collaboration.
 
 * **$B_2$: Discretionary Trip Pruning (Balancing Loop — Governance Intervention)**
-  * **Mechanism:** Budget Pressure ($+$) → Management rejects non-essential travel ($+$) → Discretionary requests fall ($-$) → Total Travel Spend drops ($-$).
-<!-- STEP_2_END -->
+  * **Mechanism:** Budget Pressure ($+$) → Management rejects non-essential travel ($+$) → Discretionary requests fall ($-$) → Total Travel Spend drops ($-$)."""
+
+# 3. Update README.md strictly between Step 2 delimiters
+readme_filename = "README.md"
+if not os.path.exists(readme_filename):
+    raise FileNotFoundError("README.md not found in the current directory.")
+
+with open(readme_filename, "r", encoding="utf-8") as f:
+    readme_content = f.read()
+
+pattern = r"<!-- STEP_2_START -->.*?<!-- STEP_2_END -->"
+replacement = f"<!-- STEP_2_START -->\n{step_2_block}\n<!-- STEP_2_END -->"
+
+if "<!-- STEP_2_START -->" in readme_content:
+    updated_readme = re.sub(pattern, replacement, readme_content, flags=re.DOTALL)
+else:
+    updated_readme = readme_content + f"\n\n<!-- STEP_2_START -->\n{step_2_block}\n<!-- STEP_2_END -->\n"
+
+with open(readme_filename, "w", encoding="utf-8") as f:
+    f.write(updated_readme)
+
+print("Step 2 refreshed: diagram layout corrected and arrows rendered cleanly.")

@@ -1,11 +1,11 @@
 # Travel Cost & Systems Optimisation Challenge
 
-An educational analytics project connecting business operations, systems thinking, dynamic cost-driver analysis, and spend forecasting.
+This project is based on synthetic data. It simulates a business with rising travel spend, and I have been tasked with understanding where cost is structural and where it is avoidable. The aim is to suggest interventions to reduce spend without damaging client delivery, collaboration or growth.
 
 ---
 
 <!-- STEP_1_START -->
-## 1. Diagnose the System: Spend Drivers
+## 1. What are the most important drivers of travel spend?
 
 | Category    | Driver                | Evidence (Synthetic Data)                                  | Operational Mechanism                                                                                 |
 |:------------|:----------------------|:-----------------------------------------------------------|:------------------------------------------------------------------------------------------------------|

@@ -81,7 +81,7 @@ drivers = pd.DataFrame([
 markdown_table = drivers.to_markdown(index=False)
 
 # 7. Construct Formatted Section
-step_1_block = f"""## 1. Diagnose the System: Spend Drivers
+step_1_block = f"""## 1. What are the most important drivers of travel spend?
 
 {markdown_table}
 

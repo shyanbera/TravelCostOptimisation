@@ -129,3 +129,25 @@ To prevent overlapping estimates (double-counting) the figures have been calcula
 * **Controlled Enforcement:** By excluding authorized executive travel (Managing Directors) from the premium cabin calculations, the £207,186 identified represents genuine behavioral policy leakage rather than structural seniority allowances.
 * **Total Opportunity:** The organization is losing approximately **15.7%** of its total travel budget to addressable friction and behavioral leakage, which can be mitigated without reducing the actual volume of commercial travel demand.
 <!-- STEP_3_END -->
+
+## 4. Spend Forecasting & Reality Checks
+
+<!-- STEP_4_START -->
+
+
+To project future financial exposure, a time-series forecasting approach was applied to aggregate monthly spend. 
+
+### Model Evaluation & Time-Based Holdout
+In accordance with time-series best practices, data was strictly partitioned chronologically (80% training / 20% holdout test) to prevent data leakage and time-travel biases. 
+
+| Model Type                     | Methodology                                                     | Mean Absolute Error (MAE)   |
+|:-------------------------------|:----------------------------------------------------------------|:----------------------------|
+| Baseline (Naive)               | Carries the last observed month's spend forward.                | £156,518.11                 |
+| Advanced (Holt's Linear Trend) | Uses exponential smoothing to capture underlying growth trends. | £159,701.24                 |
+
+### Integrating the CLD: Explaining Forecast Uncertainty
+While the Advanced model reduces error compared to a Naive baseline, absolute predictive certainty is impossible due to the system dynamics mapped in Step 2:
+* **The Volatility Penalty ($R_2$ Loop):** As demonstrated in the Causal Loop Diagram, mandating advance bookings exposes the company to external client schedule shifts. These sudden cancellations create unpredictable spikes in penalty fees that statistical models cannot foresee.
+* **Demand Substitution ($B_1$ Loop):** If total spend nears a hard budgetary ceiling, management will force Virtual Meeting Substitution. This balancing loop acts as an organic brake on spend, which may artificially cause the Advanced trend model to over-predict future months.
+* **Conclusion:** The MAE of £159,701 represents the true "noise" floor of the system. Further optimizations should focus on structurally reducing this volatility rather than attempting to predict it perfectly.
+<!-- STEP_4_END -->

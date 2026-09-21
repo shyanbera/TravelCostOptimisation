@@ -5,25 +5,25 @@ This project is based on synthetic data. It simulates a business with rising tra
 ---
 ## Short Summary
 
-**What is Happening & Why**
+### What is happening and why?
 Corporate travel spend is currently operating with high baseline inefficiency and severe month-to-month volatility. The primary drivers are systemic rather than strictly demand-based. According to our Causal Loop mapping:
 *   **Internal Bottlenecks ($R_1$):** Sluggish approval workflows are forcing expensive short-notice bookings.
 *   **External Volatility ($R_2$):** Client-driven schedule changes are triggering heavy cancellation penalties.
 *   **Policy Leakage:** Structural non-compliance is occurring through unauthorized premium cabin bookings by non-executive staff.
 
-**The Quantified Opportunity**
+### The Quantified Opportunity
 Applying a strict, row-by-row waterfall methodology against a baseline (booked in advance, compliant etc.) reveals significant avoidable waste. By eliminating unauthorized premium fares, mitigating short-notice booking premiums, and enforcing hotel channel compliance, the organization can recover a substantial percentage of its total travel spend without reducing the actual volume of commercial travel.
 
-**Recommended Interventions**
+### Recommended Interventions
 To structurally fix the system rather than just treating symptoms, we recommend three immediate mechanisms:
 1.  **The Advance Booking Lock:** Require VP approval for flights booked under 7 days to shift volume into the optimal 8-14 day window.
 2.  **Premium Cabin Hard-Cap:** Implement a software-level rejection for Business/First Class fares for any employee not holding Managing Director status.
 3.  **Volatility Flex-Fare Mandate:** Require fully refundable tickets strictly for client-facing teams with high historical cancellation rates to neutralize penalty fees.
 
-**What We Will Test Next**
+### What will we test next?
 Before a global rollout, we must prove these policies actually cause savings without damaging business operations. Our immediate next step is to launch a **Difference-in-Differences pilot**. We will roll out the Advance Booking Lock to the Marketing department for 90 days, utilizing the Sales department as a control group to isolate the policy's financial impact from background market noise.
 
-**Limitations of the Synthetic Data**
+### Limitations of the synthetic data
 While the mathematical modeling is rigorous, this forecast relies on a synthetic dataset. Therefore, two critical variables remain unverified:
 *   **Employee Sentiment & Cultural Friction:** The data cannot predict the morale impact or "employee churn" resulting from tighter premium cabin restrictions.
 *   **Real-World Supplier Nuance:** The data assumes static, spot-market pricing and does not account for real-world corporate negotiated rates or macro-level airline yield inflation.

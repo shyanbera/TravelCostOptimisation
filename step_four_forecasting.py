@@ -65,7 +65,7 @@ In accordance with time-series best practices, data was strictly partitioned chr
 
 {markdown_table}
 
-### Integrating the CLD: Explaining Forecast Uncertainty
+### Using The CLD to Explain Forecast Uncertainty
 {performance_context} due to the system dynamics mapped in Step 2:
 * **The Volatility Penalty ($R_2$ Loop):** As demonstrated in the Causal Loop Diagram, mandating advance bookings exposes the company to external client schedule shifts. These sudden cancellations create unpredictable spikes in penalty fees that statistical trend models cannot foresee.
 * **Demand Substitution ($B_1$ Loop):** If total spend nears a hard budgetary ceiling, management will force Virtual Meeting Substitution. This balancing loop acts as an organic brake on spend, which may artificially cause the Advanced trend model to over-predict future months.

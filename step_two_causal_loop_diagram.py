@@ -50,13 +50,10 @@ flowchart TD
 ```"""
 
 # 2. Documentation using clean unicode arrows (no string escape bugs)
-step_2_block = f"""## 2. Systems Thinking: Causal Loop Diagram (CLD)
+step_2_block = f"""{mermaid_diagram}
 
-{mermaid_diagram}
 
-### System Architecture: 12 Variables, Loops & Mechanisms
-
-#### The 12 Variables
+### Explanation of The 12 Variables
 1. **Core Business Demand:** Underlying commercial requirement for client delivery, business development, and delivery milestones.
 2. **Travel Requests Initiated:** Volume of trip bookings formally submitted by employees.
 3. **Policy Strictness & Controls:** Management implementation of pre-trip approval gates and scrutiny.
@@ -76,18 +73,18 @@ step_2_block = f"""## 2. Systems Thinking: Causal Loop Diagram (CLD)
 
 * **$R_1$: The Bottleneck Trap (Reinforcing Loop — Unintended Cost Inflation)**
   * **Mechanism:** Spend exceeds budget → Budget Pressure rises ($+$) → Leadership implements tighter approval controls ($+$) → **[DELAY]** Approval Delays lengthen ($+$) → Booking Lead Time compresses ($-$) → Unit Airfares jump due to short-notice airline yield tiers ($-$) → Total Spend increases ($+$).
-  * **System Insight:** Bureaucratic governance designed to restrict spending inadvertently increases ticket prices by stripping employees of advance purchase discounts.
+  * **Takeaway:** Governance designed to restrict spending inadvertently increases ticket prices by stripping employees of advance purchase discounts.
 
 * **$R_2$: The Volatility Trap (Reinforcing Loop — Early Booking Flexibility Penalty)**
   * **Mechanism:** Mandating advance bookings ($+$ Lead Time) → Increases exposure to client schedule changes and project date shifts ($+$ Schedule Uncertainty) → Higher rate of flight modifications and cancellations ($+$) → Change & Cancellation Fees rise ($+$) → Total Spend rises ($+$).
-  * **System Insight:** Advance booking discounts carry a real operational trade-off against schedule churn; booking too far out can inflate change fees.
+  * **Takeaway:** Advance booking discounts carry a real trade-off against scheduling issues; booking too far out inflates change fees.
 
 * **$B_1$: Virtual Substitution (Balancing Loop — Demand Dampening)**
   * **Mechanism:** Budget Pressure ($+$) → Virtual Meeting Substitution rises ($+$) → Travel Requests Initiated falls ($-$) → Total Travel Spend drops ($-$).
-  * **System Insight:** Rising cost pressure naturally pushes teams toward digital alternatives for routine internal collaboration.
+  * **Takeaway:** Rising cost pressure naturally pushes teams toward digital alternatives for routine internal collaboration.
 
 * **$B_2$: Discretionary Trip Pruning (Balancing Loop — Governance Intervention)**
-  * **Mechanism:** Budget Pressure ($+$) → Management rejects non-essential travel ($+$) → Discretionary requests fall ($-$) → Total Travel Spend drops ($-$)."""
+  * **Takeaway:** Budget Pressure ($+$) → Management rejects non-essential travel ($+$) → Discretionary requests fall ($-$) → Total Travel Spend drops ($-$)."""
 
 # 3. Update README.md strictly between Step 2 delimiters
 readme_filename = "README.md"

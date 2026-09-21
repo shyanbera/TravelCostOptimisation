@@ -24,7 +24,7 @@ This project is based on synthetic data. It simulates a business with rising tra
 <!-- STEP_1_END -->
 
 
-## 2. Systems Thinking: Causal Loop Diagram (CLD)
+## 2. Causal Loop Diagram (CLD)
 Here I have constructed a Causal Loop Diagram. This serves as a hypothesis for how the drivers of travel spend interact, motivated by some of the data from Step 1 as well as a general understanding of corporate structure.
 
 <!-- STEP_2_START -->
@@ -109,3 +109,23 @@ flowchart TD
 * **$B_2$: Discretionary Trip Pruning (Balancing Loop — Governance Intervention)**
   * **Takeaway:** Budget Pressure ($+$) → Management rejects non-essential travel ($+$) → Discretionary requests fall ($-$) → Total Travel Spend drops ($-$).
 <!-- STEP_2_END -->
+
+
+## 3. Quantification: Avoidable Cost Spend
+<!-- STEP_3_START -->
+
+
+To prevent overlapping estimates (double-counting) the figures have been calculated with a waterfall methodology. We first calculated a baseline daily rate based on the trips that did everything right (e.g. Economy Class, Policy Compliant, Booked in Advance). Then, this gives an upper ceiling for how much money one can save on a trip, given by Actual Cost - Target Cost. 
+
+| Efficiency Lever                           | Calculation Logic & Confounder Control                                                        | Net Recoverable (£)              |
+|:-------------------------------------------|:----------------------------------------------------------------------------------------------|:---------------------------------|
+| 1. Advance Booking Optimization (0-7 Days) | Targeted 15-30 day advance window. Deducted £12+ expected schedule churn risk per ticket.     | £350,879.70                      |
+| 2. Unauthorized Premium Cabin (Non-MD)     | Isolated Business Class base fares. Excluded Managing Directors to respect policy allowances. | £207,186.48                      |
+| 3. Policy Non-Compliance & Peak Surge      | Captured remaining trip-level variance strictly tied to off-channel booking or event surges.  | £231,351.08                      |
+| **Total Avoidable Spend**                  | **Strict row-by-row waterfall limits savings to mathematical maximums.**                      | **£789,417.25 (15.7% of Spend)** |
+
+### Key Financial Insights
+* **The Flexibility Trade-off:** Pushing short-notice bookings into the 15-30 day window yields significant base airfare discounts, but the net savings are partially offset by the statistical increase in schedule churn (cancellation fees). The £350,880 figure represents pure net opportunity.
+* **Controlled Enforcement:** By excluding authorized executive travel (Managing Directors) from the premium cabin calculations, the £207,186 identified represents genuine behavioral policy leakage rather than structural seniority allowances.
+* **Total Opportunity:** The organization is losing approximately **15.7%** of its total travel budget to addressable friction and behavioral leakage, which can be mitigated without reducing the actual volume of commercial travel demand.
+<!-- STEP_3_END -->
